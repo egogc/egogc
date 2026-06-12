@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aseo – Apto Valencia</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 20px 16px 40px;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #111;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .subtitulo {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    border-top: 6px solid var(--color);
+    padding: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+
+  .fecha {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+  }
+
+  .fila {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+    color: #333;
+  }
+
+  .fila .etiqueta {
+    color: #777;
+  }
+
+  .fila .hora {
+    font-weight: bold;
+    color: #111;
+  }
+
+  .alerta {
+    margin-top: 12px;
+    background: #FFF3CD;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    font-weight: bold;
+    color: #7A5C00;
+    text-align: center;
+  }
+
+  .ok {
+    margin-top: 12px;
+    background: #E8F5E9;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    font-weight: bold;
+    color: #2E7D32;
+    text-align: center;
+  }
+
+  .mes {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin: 20px 0 10px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+  }
+</style>
+</head>
+<body>
+
+<h1>Calendario de aseo</h1>
+<div class="subtitulo">Apto Valencia Bahía Solero</div>
+
+<div class="mes">Junio</div>
+
+<div class="card" style="--color: #E53935;">
+  <div class="fecha">Viernes 12 de junio</div>
+  <div class="fila"><span class="etiqueta">Los huéspedes salen</span><span class="hora">1:00 p. m.</span></div>
+  <div class="fila"><span class="etiqueta">Los nuevos llegan</span><span class="hora">3:00 p. m.</span></div>
+  <hr>
+  <div class="fila"><span class="etiqueta">Tiempo para aseo</span><span class="hora">2 horas</span></div>
+  <div class="alerta">Llegar antes de la 1:00 p. m.</div>
+</div>
+
+<div class="card" style="--color: #E53935;">
+  <div class="fecha">Sábado 13 de junio</div>
+  <div class="fila"><span class="etiqueta">Los huéspedes salen</span><span class="hora">1:00 p. m.</span></div>
+  <div class="fila"><span class="etiqueta">Los nuevos llegan</span><span class="hora">3:00 p. m.</span></div>
+  <hr>
+  <div class="fila"><span class="etiqueta">Tiempo para aseo</span><span class="hora">2 horas</span></div>
+  <div class="alerta">Llegar antes de la 1:00 p. m.</div>
+</div>
+
+<div class="card" style="--color: #43A047;">
+  <div class="fecha">Miércoles 17 de junio</div>
+  <div class="fila"><span class="etiqueta">Los huéspedes salen</span><span class="hora">1:00 p. m.</span></div>
+  <div class="fila"><span class="etiqueta">Los nuevos llegan</span><span class="hora">Lun 22 de junio</span></div>
+  <hr>
+  <div class="fila"><span class="etiqueta">Tiempo para aseo</span><span class="hora">5 días</span></div>
+  <div class="ok">Sin afán</div>
+</div>
+
+<div class="card" style="--color: #E53935;">
+  <div class="fecha">Viernes 26 de junio</div>
+  <div class="fila"><span class="etiqueta">Los huéspedes salen</span><span class="hora">11:00 a. m.</span></div>
+  <div class="fila"><span class="etiqueta">Los nuevos llegan</span><span class="hora">Sáb 27 de junio</span></div>
+  <hr>
+  <div class="fila"><span class="etiqueta">Tiempo para aseo</span><span class="hora">1 día</span></div>
+  <div class="alerta">Hacer el aseo ese mismo día</div>
+</div>
+
+<div class="card" style="--color: #43A047;">
+  <div class="fecha">Lunes 29 de junio</div>
+  <div class="fila"><span class="etiqueta">Los huéspedes salen</span><span class="hora">1:00 p. m.</span></div>
+  <div class="fila"><span class="etiqueta">Los nuevos llegan</span><span class="hora">Sáb 3 de julio</span></div>
+  <hr>
+  <div class="fila"><span class="etiqueta">Tiempo para aseo</span><span class="hora">4 días</span></div>
+  <div class="ok">Sin afán</div>
+</div>
+
+<div class="mes">Julio</div>
+
+<div class="card" style="--color: #43A047;">
+  <div class="fecha">Domingo 5 de julio</div>
+  <div class="fila"><span class="etiqueta">Los huéspedes salen</span><span class="hora">1:00 p. m.</span></div>
+  <div class="fila"><span class="etiqueta">Los nuevos llegan</span><span class="hora">Por confirmar</span></div>
+  <hr>
+  <div class="fila"><span class="etiqueta">Tiempo para aseo</span><span class="hora">Con calma</span></div>
+  <div class="ok">Sin afán</div>
+</div>
+
+</body>
+</html>
