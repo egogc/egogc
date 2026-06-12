@@ -93,6 +93,47 @@
     margin: 20px 0 10px;
   }
 
+  .pagado {
+    margin-top: 12px;
+    background: #E3F2FD;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    font-weight: bold;
+    color: #1565C0;
+    text-align: center;
+  }
+
+  .card.pagada {
+    background: #ececec;
+    border-top-color: #bbb !important;
+  }
+
+  .card.pagada .fecha,
+  .card.pagada .hora,
+  .card.pagada .etiqueta {
+    color: #999;
+  }
+
+  .card.pagada .alerta,
+  .card.pagada .ok {
+    background: #ddd;
+    color: #999;
+  }
+
+  .btn-comprobante {
+    display: block;
+    margin-top: 8px;
+    background: #1565C0;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    font-weight: bold;
+  }
+
   hr {
     border: none;
     border-top: 1px solid #eee;
@@ -103,17 +144,13 @@
 <body>
 
 <h1>Calendario de aseo</h1>
-<div class="subtitulo">Apto Valencia Bahía Solero</div>
+<div class="subtitulo">Torre 2 Apartamento 802, Valencia Bahía Solero</div>
 
 <div class="mes">Junio</div>
 
-<div class="card" style="--color: #E53935;">
+<div class="card pagada" style="--color: #E53935;">
   <div class="fecha">Viernes 12 de junio</div>
-  <div class="fila"><span class="etiqueta">Los huéspedes salen</span><span class="hora">1:00 p. m.</span></div>
-  <div class="fila"><span class="etiqueta">Los nuevos llegan</span><span class="hora">3:00 p. m.</span></div>
-  <hr>
-  <div class="fila"><span class="etiqueta">Tiempo para aseo</span><span class="hora">2 horas</span></div>
-  <div class="alerta">Llegar antes de la 1:00 p. m.</div>
+  <a class="btn-comprobante" href="001.jpg" target="_blank">Aseo pagado – Ver comprobante</a>
 </div>
 
 <div class="card" style="--color: #E53935;">
