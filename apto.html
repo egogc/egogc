@@ -107,18 +107,43 @@
   .card.pagada {
     background: #ececec;
     border-top-color: #bbb !important;
+    padding: 0;
+    overflow: hidden;
   }
 
-  .card.pagada .fecha,
-  .card.pagada .hora,
-  .card.pagada .etiqueta {
-    color: #999;
+  .card.pagada .acordeon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    cursor: pointer;
+    user-select: none;
   }
 
-  .card.pagada .alerta,
-  .card.pagada .ok {
-    background: #ddd;
+  .card.pagada .fecha {
     color: #999;
+    margin-bottom: 0;
+    font-size: 0.88rem;
+    font-weight: normal;
+  }
+
+  .card.pagada .acordeon-arrow {
+    font-size: 0.75rem;
+    color: #bbb;
+    transition: transform 0.2s;
+  }
+
+  .card.pagada.abierta .acordeon-arrow {
+    transform: rotate(180deg);
+  }
+
+  .card.pagada .acordeon-body {
+    display: none;
+    padding: 0 16px 12px;
+  }
+
+  .card.pagada.abierta .acordeon-body {
+    display: block;
   }
 
   .btn-comprobante {
@@ -132,6 +157,31 @@
     padding: 8px 12px;
     font-size: 0.82rem;
     font-weight: bold;
+  }
+
+  .pago-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0.85rem;
+    color: #555;
+  }
+
+  .pago-fila:last-child {
+    border-bottom: none;
+  }
+
+  .btn-comprobante-mini {
+    background: #1565C0;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    white-space: nowrap;
   }
 
   hr {
@@ -148,39 +198,42 @@
 
 <div class="mes">Junio</div>
 
-<div class="card pagada" style="--color: #E53935;">
-  <div class="fecha">Viernes 12 de junio</div>
-  <a class="btn-comprobante" href="001.jpg" target="_blank">Aseo pagado – Ver comprobante</a>
-</div>
-
-<div class="card pagada" style="--color: #E53935;">
-  <div class="fecha">Sábado 13 de junio</div>
-  <a class="btn-comprobante" href="002.jpg" target="_blank">Aseo pagado – Ver comprobante</a>
-</div>
-
-<div class="card pagada" style="--color: #E53935;">
-  <div class="fecha">Miércoles 17 de junio</div>
-  <a class="btn-comprobante" href="003.jpg" target="_blank">Aseo pagado – Ver comprobante</a>
-</div>
-
-<div class="card pagada" style="--color: #43A047;">
-  <div class="fecha">Sábado 20 de junio</div>
-  <a class="btn-comprobante" href="004.jpg" target="_blank">Aseo pagado – Ver comprobante</a>
-</div>
-
-
-
-<div class="card pagada" style="--color: #43A047;">
-  <div class="fecha">Lunes 29 de junio</div>
-  <a class="btn-comprobante" href="005.jpg" target="_blank">Aseo pagado – Ver comprobante</a>
+<div class="card pagada" style="--color: #bbb;">
+  <div class="acordeon-header">
+    <div class="fecha">6 aseos pagados</div>
+    <span class="acordeon-arrow">▼</span>
+  </div>
+  <div class="acordeon-body">
+    <div class="pago-fila">
+      <span>Vie 12 de junio</span>
+      <a class="btn-comprobante-mini" href="001.jpg" target="_blank">Ver comprobante</a>
+    </div>
+    <div class="pago-fila">
+      <span>Sáb 13 de junio</span>
+      <a class="btn-comprobante-mini" href="002.jpg" target="_blank">Ver comprobante</a>
+    </div>
+    <div class="pago-fila">
+      <span>Mié 17 de junio</span>
+      <a class="btn-comprobante-mini" href="003.jpg" target="_blank">Ver comprobante</a>
+    </div>
+    <div class="pago-fila">
+      <span>Sáb 20 de junio</span>
+      <a class="btn-comprobante-mini" href="004.jpg" target="_blank">Ver comprobante</a>
+    </div>
+    <div class="pago-fila">
+      <span>Lun 29 de junio</span>
+      <a class="btn-comprobante-mini" href="005.jpg" target="_blank">Ver comprobante</a>
+    </div>
+    <div class="pago-fila">
+      <span>Vie 3 de julio</span>
+      <a class="btn-comprobante-mini" href="006.jpg" target="_blank">Ver comprobante</a>
+    </div>
+  </div>
 </div>
 
 <div class="mes">Julio</div>
 
-<div class="card pagada" style="--color: #43A047;">
-  <div class="fecha">Viernes 3 de julio</div>
-  <a class="btn-comprobante" href="006.jpg" target="_blank">Aseo pagado – Ver comprobante</a>
-</div>
+
 
 <div class="card" style="--color: #E53935;">
   <div class="fecha">Miércoles 8 de julio</div>
@@ -207,4 +260,11 @@
   <div class="fila"><span class="etiqueta">Tiempo para aseo</span><span class="hora">Con calma</span></div>
   <div class="ok">Sin afán</div>
 </div>
+<script>
+  document.querySelectorAll('.card.pagada .acordeon-header').forEach(header => {
+    header.addEventListener('click', () => {
+      header.closest('.card.pagada').classList.toggle('abierta');
+    });
+  });
+</script>
 </html>
